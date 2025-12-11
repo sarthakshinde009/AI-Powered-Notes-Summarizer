@@ -1,0 +1,9 @@
+During the pre-digital era, patients suffered from inefficient and faulty clinical systems, processes, and conditions.
+Many medical errors happened in the past due to undeveloped health technologies. 
+Some examples of these medical errors included adverse drug events and alarm fatigue. 
+When many alarms are repeatedly triggered or activated, especially for unimportant events, workers may become desensitized to the alarms. 
+Healthcare professionals who have alarm fatigue may ignore an alarm believing it to be insignificant, which could lead to death and dangerous situations. 
+With technological development, an intelligent program of integration and physiologic sense-making was developed and helped reduce the number of false alarms.
+Also, with greater investment in health technologies, fewer medical errors happened.
+Outdated paper records were replaced in many healthcare organizations by electronic health records . 
+According to studies, this has brought many changes to healthcare.[5] Drug administration has improved, healthcare providers can now access medical information easier, provide better treatments and faster results, and save more costs.
