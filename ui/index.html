@@ -1,29 +1,61 @@
 <style>
-    div{
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #0d1224;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .card {
         background-color: black;
-        width: 400px;
-        height: 140px;
-        padding-top: 1.5px;
-        padding-left: 5px;
-        margin-top: 350px;
-        margin-left: 160px;
+        width: 420px;
+        padding: 20px;
         border-radius: 15px;
-        box-shadow: 10px 10px 20px 10px rgb(34, 51, 86);
+        box-shadow: 10px 10px 20px rgba(34, 51, 86, 0.8);
     }
-    h1{
+
+    .card h1 {
         color: white;
+        margin-top: 0;
     }
-    p{
+
+    .card p {
         color: rgb(169, 155, 155);
+        line-height: 1.5;
+    }
+    .btn {
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+    padding: 14px 0;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+    }
+    
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 25px rgba(37, 99, 235, 0.6);
     }
 </style>
-<div>
-    <h1>
-        My AI Notes Summarizer
-    </h1>
+
+<div class="card">
+    <h1>My AI Notes Summarizer</h1>
     <p>
         Welcome to the AI Notes Summarizer.
-        This tool helps you transform raw text into sharp, organized summaries 
+        This tool helps you transform raw text into sharp, organized summaries
         so you can study faster and understand better.
     </p>
+
+    <a href="summary_report.html" class="btn">
+        View Latest Summary
+    </a>
 </div>
