@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summary Result</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, #050b1d, #0a1230);
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        /* ORIGINAL TEXT (BLUE) */
+        .original-box {
+            background-color: #0b1d3a;
+            border: 2px solid #1e90ff;
+            padding: 20px;
+            border-radius: 14px;
+        }
+
+        .original-box h2 {
+            color: #8ab4ff;
+        }
+
+        .original-box p {
+            color: #dbeafe;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+
+        /* SUMMARY (GREEN) */
+        .summary-box {
+            background-color: #052e16;
+            border: 2px solid #22c55e;
+            padding: 20px;
+            border-radius: 14px;
+        }
+
+        .summary-box h2 {
+            color: #86efac;
+        }
+
+        .summary-box p {
+            color: #dcfce7;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+
+        /* Footer note */
+        .meta {
+            text-align: center;
+            margin-top: 40px;
+            color: #9fa8ff;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>AI Summary Result</h1>
+
+<!-- =======================
+     RESULT CONTENT
+======================== -->
+<div class="container">
+
+    <!-- Original text -->
+    <div class="original-box">
+        <h2>Original Text</h2>
+        <p>{{ original_text }}</p>
+    </div>
+
+    <!-- AI summary -->
+    <div class="summary-box">
+        <h2>AI Summary</h2>
+        <p>{{ summary }}</p>
+    </div>
+
+</div>
+
+<div class="meta">
+    Summary created by Group 1 using Transformer-based AI models
+</div>
+
+</body>
+</html>

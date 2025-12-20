@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My AI Notes Summarizer</title>
+
+    <!-- =======================
+         GLOBAL STYLES
+    ======================== -->
+    <style>
+        /* Smooth scrolling for anchor navigation */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Page background and default text */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #050b1d, #0a1230);
+            color: white;
+        }
+
+        /* =======================
+           NAVBAR STYLING
+        ======================== */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+        }
+
+        nav a {
+            color: #cdd6ff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: white;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #8ea2ff;
+        }
+
+        .btn-primary {
+            background-color: #6f78ff;
+            padding: 10px 18px;
+            border-radius: 6px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* =======================
+           HERO SECTION
+        ======================== */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            padding: 80px 60px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .hero-text {
+            max-width: 500px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            color: #b8c0ff;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .hero-text a {
+            display: inline-block;
+            margin-top: 30px;
+            background: #6f78ff;
+            padding: 14px 22px;
+            border-radius: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero-image img {
+            width: 650px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* =======================
+           SECTION COMMON STYLES
+        ======================== */
+        section {
+            padding: 80px 60px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        /* =======================
+           CARD LAYOUTS
+        ======================== */
+        .card-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #0f1738;
+            border-radius: 12px;
+            padding: 25px;
+            width: 230px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        }
+
+        .card h3 {
+            color: #9fa8ff;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #cfd6ff;
+        }
+
+        /* =======================
+           FOOTER
+        ======================== */
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+            color: #9fa8ff;
+            border-top: 1px solid #1c2455;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =======================
+     NAVIGATION BAR
+======================== -->
+<nav>
+    <div class="logo">MySummarizer</div>
+
+    <!-- Anchor links scroll to sections -->
+    <div>
+        <a href="#how-it-works">How it works</a>
+        <a href="#why-use-this">Why use this</a>
+        <a href="/input" class="btn-primary">Get Started</a>
+    </div>
+</nav>
+
+<!-- =======================
+     HERO SECTION
+======================== -->
+<section class="hero">
+
+    <!-- LEFT: TEXT CONTENT -->
+    <div class="hero-text">
+        <h1>Summarize your notes instantly</h1>
+
+        <p>
+            Upload or paste your study notes and get clear, AI-powered
+            summaries in seconds. Built for students. Powered by
+            Transformer-based AI models.
+        </p>
+
+        <a class="btn-primary" href="/input">
+            Summarize your document →
+        </a>
+    </div>
+
+    <!-- RIGHT: AI IMAGE -->
+    <div class="hero-image">
+        <img src="{{ url_for('static', filename='images/hero.png') }}">
+    </div>
+
+</section>
+
+<!-- =======================
+     HOW IT WORKS SECTION
+======================== -->
+<section id="how-it-works">
+    <h2>How It Works</h2>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>1. Add Your Notes</h3>
+            <p>Paste or enter your study notes into the system for processing.</p>
+        </div>
+
+        <div class="card">
+            <h3>2. AI Processes Text</h3>
+            <p>The Transformer-based AI model reads and understands your content.</p>
+        </div>
+
+        <div class="card">
+            <h3>3. Generate Summary</h3>
+            <p>Important points are extracted and summarized automatically.</p>
+        </div>
+
+        <div class="card">
+            <h3>4. View Result</h3>
+            <p>The final summary is shown in a clean, readable format.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =======================
+     WHY USE THIS SECTION
+======================== -->
+<section id="why-use-this">
+    <h2>Why Use This?</h2>
+
+    <div class="card-container">
+        <div class="card">
+            <h3>🚀 Fast Summaries</h3>
+            <p>Convert long notes into concise summaries within seconds.</p>
+        </div>
+
+        <div class="card">
+            <h3>🎓 Student Friendly</h3>
+            <p>Designed specifically for students to revise faster and smarter.</p>
+        </div>
+
+        <div class="card">
+            <h3>🤖 AI Powered</h3>
+            <p>Uses state-of-the-art Transformer models like BART / PEGASUS.</p>
+        </div>
+    </div>
+</section>
+
+<!-- =======================
+     FOOTER
+======================== -->
+<footer>
+    AI Notes Summarizer – ASEP Project  
+    <br>
+    Built by Sarthak, Shubprasad, Vedant & Yash  
+    <br>
+    Guided by Samfocus | Powered by Transformer-based AI models
+</footer>
+
+</body>
+</html>
