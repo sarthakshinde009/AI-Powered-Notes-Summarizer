@@ -8,12 +8,10 @@
          GLOBAL STYLES
     ======================== -->
     <style>
-        /* Smooth scrolling for anchor navigation */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Page background and default text */
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -22,7 +20,29 @@
         }
 
         /* =======================
-           NAVBAR STYLING
+           ANIMATIONS
+        ======================== */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate {
+            opacity: 0;
+        }
+
+        .animate.visible {
+            animation: fadeUp 0.9s ease forwards;
+        }
+
+        /* =======================
+           NAVBAR
         ======================== */
         nav {
             display: flex;
@@ -54,6 +74,12 @@
             border-radius: 6px;
             color: white;
             font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #8890ff;
+            transform: scale(1.05);
         }
 
         /* =======================
@@ -65,6 +91,7 @@
             padding: 80px 60px;
             max-width: 1200px;
             margin: auto;
+            align-items: center;
         }
 
         .hero-text {
@@ -82,17 +109,6 @@
             line-height: 1.6;
         }
 
-        .hero-text a {
-            display: inline-block;
-            margin-top: 30px;
-            background: #6f78ff;
-            padding: 14px 22px;
-            border-radius: 8px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
         .hero-image img {
             width: 650px;
             max-width: 100%;
@@ -100,7 +116,16 @@
         }
 
         /* =======================
-           SECTION COMMON STYLES
+        HERO VIDEO BACKGROUND
+        ======================== */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* =======================
+           SECTIONS
         ======================== */
         section {
             padding: 80px 60px;
@@ -115,7 +140,7 @@
         }
 
         /* =======================
-           CARD LAYOUTS
+           CARDS
         ======================== */
         .card-container {
             display: flex;
@@ -130,6 +155,12 @@
             padding: 25px;
             width: 230px;
             box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
         }
 
         .card h3 {
@@ -144,6 +175,33 @@
         }
 
         /* =======================
+           CONTACT
+        ======================== */
+        .contact-box {
+            background: #0f1738;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-box a {
+            display: inline-block;
+            background: #6f78ff;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-box a:hover {
+            transform: scale(1.05);
+        }
+
+        /* =======================
            FOOTER
         ======================== */
         footer {
@@ -153,115 +211,112 @@
             color: #9fa8ff;
             border-top: 1px solid #1c2455;
         }
+
+        .social-links a {
+            color: #8ea2ff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .social-links a:hover {
+            color: white;
+        }
     </style>
 </head>
 
 <body>
 
-<!-- =======================
-     NAVIGATION BAR
-======================== -->
 <nav>
     <div class="logo">MySummarizer</div>
-
-    <!-- Anchor links scroll to sections -->
     <div>
         <a href="#how-it-works">How it works</a>
-        <a href="#why-use-this">Why use this</a>
+        <a href="#features">Features</a>
+        <a href="#about-us">About Us</a>
+        <a href="#contact-us">Contact</a>
         <a href="/input" class="btn-primary">Get Started</a>
     </div>
 </nav>
 
-<!-- =======================
-     HERO SECTION
-======================== -->
-<section class="hero">
-
-    <!-- LEFT: TEXT CONTENT -->
+<section class="hero animate">
     <div class="hero-text">
         <h1>Summarize your notes instantly</h1>
-
         <p>
             Upload or paste your study notes and get clear, AI-powered
             summaries in seconds. Built for students. Powered by
             Transformer-based AI models.
         </p>
-
-        <a class="btn-primary" href="/input">
-            Summarize your document →
-        </a>
+        <a class="btn-primary" href="/input">Summarize your document →</a>
     </div>
-
-    <!-- RIGHT: AI IMAGE -->
     <div class="hero-image">
         <img src="{{ url_for('static', filename='images/hero.png') }}">
     </div>
-
 </section>
 
-<!-- =======================
-     HOW IT WORKS SECTION
-======================== -->
-<section id="how-it-works">
+<section id="how-it-works" class="animate">
     <h2>How It Works</h2>
-
     <div class="card-container">
-        <div class="card">
-            <h3>1. Add Your Notes</h3>
-            <p>Paste or enter your study notes into the system for processing.</p>
-        </div>
-
-        <div class="card">
-            <h3>2. AI Processes Text</h3>
-            <p>The Transformer-based AI model reads and understands your content.</p>
-        </div>
-
-        <div class="card">
-            <h3>3. Generate Summary</h3>
-            <p>Important points are extracted and summarized automatically.</p>
-        </div>
-
-        <div class="card">
-            <h3>4. View Result</h3>
-            <p>The final summary is shown in a clean, readable format.</p>
-        </div>
+        <div class="card"><h3>1. Add Notes</h3><p>Paste or enter your study notes into the system for processing.</p></div>
+        <div class="card"><h3>2. AI Reads</h3><p>The Transformer-based AI model reads and understands your content..</p></div>
+        <div class="card"><h3>3. Summarize</h3><p>Important points are extracted and summarized automatically.</p></div>
+        <div class="card"><h3>4. View</h3><p>The final summary is shown in a clean, readable format.</p></div>
     </div>
 </section>
 
-<!-- =======================
-     WHY USE THIS SECTION
-======================== -->
-<section id="why-use-this">
-    <h2>Why Use This?</h2>
-
+<section id="features" class="animate">
+    <h2>Features</h2>
     <div class="card-container">
-        <div class="card">
-            <h3>🚀 Fast Summaries</h3>
-            <p>Convert long notes into concise summaries within seconds.</p>
-        </div>
-
-        <div class="card">
-            <h3>🎓 Student Friendly</h3>
-            <p>Designed specifically for students to revise faster and smarter.</p>
-        </div>
-
-        <div class="card">
-            <h3>🤖 AI Powered</h3>
-            <p>Uses state-of-the-art Transformer models like BART / PEGASUS.</p>
-        </div>
+        <div class="card"><h3>🚀 Fast</h3><p>Convert long notes into concise summaries within seconds.</p></div>
+        <div class="card"><h3>🎓 Student</h3><p>Designed specifically for students to revise faster and smarter.</p></div>
+        <div class="card"><h3>🤖 AI</h3><p>Uses state-of-the-art Transformer models like BART / PEGASUS.</p></div>
     </div>
 </section>
 
-<!-- =======================
-     FOOTER
-======================== -->
+<section id="about-us" class="animate">
+    <h2>About Us</h2>
+    <div class="card-container">
+        <div class="card"><h3>Who We Are</h3><p>We are engineering students passionate about using Artificial
+                Intelligence to solve real academic problems faced by students.</p></div>
+        <div class="card"><h3>Goal</h3><p>Our goal is to help students save time by converting long,
+                unstructured notes into clear and concise summaries.</p></div>
+        <div class="card"><h3>Vision</h3><p>This project was built as part of the ASEP curriculum, focusing
+                on practical application of AI and web technologies.</p></div>
+    </div>
+</section>
+
+<section id="contact-us" class="animate">
+    <h2>Contact Us</h2>
+    <div class="contact-box">
+        <p>Have questions, feedback, or suggestions?  
+            We’d love to hear from you.</p>
+        <a href="mailto:asep.notessummarizer@gmail.com">Contact via Email</a>
+    </div>
+</section>
+
 <footer>
-    AI Notes Summarizer – ASEP Project  
-    <br>
-    Built by Sarthak, Shubprasad, Vedant & Yash  
-    <br>
-    Guided by Samfocus | Powered by Transformer-based AI models
+    AI Notes Summarizer – ASEP Project<br>
+    Built by Sarthak, Shubprasad, Vedant & Yash
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/sarthak-shinde-224777385/" target="_blank">Sarthak</a> |
+        <a href="https://www.linkedin.com/in/shubhaprasad-shinde-106777387/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app%22" target="_blank">Shubprasad</a> |
+        <a href="https://www.linkedin.com/in/vedant-shinde-328207397?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app%22" target="_blank">Vedant</a> |
+        <a href="https://www.linkedin.com/in/yash-kiran-shisode-4a0a12379?utm_source=share_via&utm_content=profile&utm_medium=member_android%22" target="_blank">Yash</a>
+    </div>
 </footer>
+
+<script>
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+            }
+        });
+    });
+
+    document.querySelectorAll(".animate").forEach(section => {
+        observer.observe(section);
+    });
+</script>
 
 </body>
 </html>

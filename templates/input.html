@@ -5,6 +5,36 @@
     <title>Enter Your Notes</title>
 
     <style>
+        /* =======================
+           FULLSCREEN BACKGROUND VIDEO
+        ======================== */
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        /* Dark overlay for readability */
+        .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(5, 11, 29, 0.6);
+            z-index: -1;
+        }
+
+        /* Keep card above everything */
+        .input-card {
+            position: relative;
+            z-index: 2;
+        }
+
         body {
             margin: 0;
             height: 100vh;
@@ -69,17 +99,24 @@
 </head>
 
 <body>
-
-<!-- =======================
-     INPUT FORM
-======================== -->
-<form class="input-card" action="/summarize" method="POST">
-    <h1>Paste Your Notes</h1>
-
-    <textarea name="notes" placeholder="Paste your notes here..." required></textarea>
-
-    <button type="submit">Generate Summary</button>
-</form>
+    <!-- =======================
+         BG VIDEO
+    ======================== -->
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="{{ url_for('static', filename='videos/herovid.mp4') }}" type="video/mp4">
+    </video>
+    
+    <div class="video-overlay"></div>
+    <!-- =======================
+         INPUT FORM
+    ======================== -->
+    <form class="input-card" action="/summarize" method="POST">
+        <h1>Paste Your Notes</h1>
+    
+        <textarea name="notes" placeholder="Paste your notes here..." required></textarea>
+    
+        <button type="submit">Generate Summary</button>
+    </form>
 
 </body>
 </html>
